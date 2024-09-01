@@ -13,15 +13,15 @@ const config: GatsbyConfig = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-mdx",
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-mdx`,
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: `pages`,
+        path: `./src/pages/`,
       },
-      __key: "pages",
+      __key: `pages`,
     },
   ],
 };

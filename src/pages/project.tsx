@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
+import Seo from "./Seo";
 
 export default function Project() {
   return (
@@ -8,3 +9,5 @@ export default function Project() {
     </Layout>
   );
 }
+
+export const Head = () => <Seo title="Project" />;

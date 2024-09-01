@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
+import { StaticImage } from "gatsby-plugin-image";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -10,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Container = styled.div`
-  background-color: #1c1c1c;
+  background-color: #13171f;
   color: white;
   position: relative;
   max-width: 100vw;
@@ -69,6 +70,9 @@ export default function Layout({ title, children }: ILayoutProps) {
             </li>
             <li>
               <Link to="/project">Project</Link>
+            </li>
+            <li>
+              <StaticImage src="" alt="githubIcon" width={50} />
             </li>
           </ul>
         </Nav>
