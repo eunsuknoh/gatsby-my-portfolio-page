@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
+import Footer from "./footer";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -11,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Container = styled.div`
+  position: relative;
   background-color: #13171f;
   color: white;
   position: relative;
@@ -27,6 +29,7 @@ const Nav = styled.nav`
   ul {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 25px;
   }
   li {
@@ -42,6 +45,14 @@ const Nav = styled.nav`
       box-shadow: inset 0 -1px 0 0;
     }
   }
+  li:last-child {
+    a:hover {
+      box-shadow: none;
+    }
+  }
+  img {
+    width: 30px;
+  }
 `;
 
 const Main = styled.main`
@@ -51,6 +62,12 @@ const Main = styled.main`
   margin-top: 70px;
   box-shadow: white 0px 1px 4px;
   /* box-shadow: white 0px 1px 2px 0px, white 0px 2px 6px 2px; */
+`;
+
+const FooterBox = styled.div`
+  position: absolute;
+  bottom: 10px;
+  left: 550px;
 `;
 
 interface ILayoutProps {
@@ -72,7 +89,12 @@ export default function Layout({ title, children }: ILayoutProps) {
               <Link to="/project">Project</Link>
             </li>
             <li>
-              <StaticImage src="" alt="githubIcon" width={50} />
+              <a href="https://github.com/eunsuknoh" target="_blank">
+                <StaticImage
+                  src="../images/github-icon.png"
+                  alt="github-icon"
+                />
+              </a>
             </li>
           </ul>
         </Nav>
@@ -80,6 +102,9 @@ export default function Layout({ title, children }: ILayoutProps) {
           <h1>{title}</h1>
           {children}
         </Main>
+        <FooterBox>
+          <Footer />
+        </FooterBox>
       </Container>
     </>
   );

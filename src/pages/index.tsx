@@ -1,7 +1,7 @@
 import * as React from "react";
 import Layout from "../components/Layout";
 import styled from "styled-components";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import Seo from "./Seo";
 import { graphql, PageProps } from "gatsby";
 
@@ -10,25 +10,74 @@ const Container = styled.div`
 `;
 
 const MainBox = styled.div`
+  margin-top: 40px;
+`;
+
+const Section1 = styled.div`
   display: flex;
   justify-content: space-around;
-  gap: 60px;
   img {
-    width: 350px;
+    object-fit: contain;
+    width: fit-content;
+    height: 250px;
+  }
+  p {
+    line-height: 1.5em;
+    span:first-child {
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 1.5cm;
+    }
+    span:last-child {
+      font-size: 21px;
+      font-weight: 600;
+      color: lightblue;
+    }
+  }
+`;
+
+const Section2 = styled.div`
+  margin: 0px 50px;
+  margin-top: 70px;
+`;
+
+const Icons = styled.div`
+  display: flex;
+  gap: 20px;
+  margin-left: 50px;
+  img {
+    width: 50px;
   }
 `;
 
 export default function IndexPage({ data }: PageProps<Queries.ImageDataQuery>) {
+  const img = getImage(data.file?.childImageSharp?.gatsbyImageData!);
+
   return (
     <Layout title="Portfolio">
       <Container>
         <MainBox>
-          <p>
-            안녕하세요 👋 노은숙입니다
-            <br />
-            아름다움을 선사하고, 편리함을 제공하고 싶은 프론트엔드 개발자입니다
-          </p>
-          <GatsbyImage image={img as any} alt="avatar" />
+          <Section1>
+            <GatsbyImage image={img as any} alt="avatar" />
+            <p>
+              <span>안녕하세요 🐋 노은숙입니다</span>
+              <br />
+              사용자에게 아름다움을 선사하고
+              <br />
+              편리함을 제공하고 싶은 <span>프론트엔드 개발자</span> 입니다
+            </p>
+          </Section1>
+          <Section2>
+            <h2>Skills</h2>
+            <Icons>
+              <StaticImage src="../images/html.png" alt="html" />
+              <StaticImage src="../images/css.png" alt="css" />
+              <StaticImage src="../images/js.png" alt="js" />
+              <StaticImage src="../images/ts.png" alt="ts" />
+              <StaticImage src="../images/react.png" alt="react" />
+              <StaticImage src="../images/github-icon.png" alt="github-icon" />
+            </Icons>
+          </Section2>
         </MainBox>
       </Container>
     </Layout>
@@ -37,8 +86,8 @@ export default function IndexPage({ data }: PageProps<Queries.ImageDataQuery>) {
 
 export const query = graphql`
   query ImageData {
-    file(id: { eq: "461a3337-0278-5ba4-be1a-0b553deb5063" }) {
-      childrenImageSharp {
+    file(relativePath: { eq: "avatar.png" }) {
+      childImageSharp {
         gatsbyImageData
       }
     }
