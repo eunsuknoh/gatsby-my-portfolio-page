@@ -66,8 +66,9 @@ const Main = styled.main`
 
 const FooterBox = styled.div`
   position: absolute;
-  bottom: 10px;
-  left: 550px;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
 `;
 
 interface ILayoutProps {

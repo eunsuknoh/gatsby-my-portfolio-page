@@ -76,6 +76,8 @@ export default function IndexPage({ data }: PageProps<Queries.ImageDataQuery>) {
               <StaticImage src="../images/ts.png" alt="ts" />
               <StaticImage src="../images/react.png" alt="react" />
               <StaticImage src="../images/github-icon.png" alt="github-icon" />
+              <StaticImage src="../images/slack.png" alt="slack" />
+              <StaticImage src="../images/gatsby.png" alt="gatsby" />
             </Icons>
           </Section2>
         </MainBox>
