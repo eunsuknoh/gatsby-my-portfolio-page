@@ -1,24 +1,17 @@
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
-
-const Container = styled.div`
-  margin: 0px 40px;
-  h2 {
-    display: flex;
-    justify-content: center;
-    font-size: 30px;
-  }
-`;
+import ProjectLayout from "../../components/ProjectLayout";
 
 const MainBox = styled.div`
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
 `;
 
 const TextBox = styled.div`
-  margin-left: 100px;
+  width: 70%;
+  margin-top: 30px;
   p {
     line-height: 1.5em;
   }
@@ -62,11 +55,9 @@ const TextSmallBox = styled.div`
 
 export default function MyPortfolio() {
   return (
-    <Container>
-      <h2>포트폴리오 사이트</h2>
+    <ProjectLayout title="포트폴리오 사이트">
       <MainBox>
-        <StaticImage src="/images/portfolio.png" alt="portfolio" width={200} />
-        <span>sample image</span>
+        <StaticImage src="../../images/portfolio.png" alt="portfolio" />
         <TextBox>
           <p>
             지금 보고 계신 사이트로,
@@ -75,7 +66,7 @@ export default function MyPortfolio() {
             <br />
             메인 화면의 아바타나 아이콘 이미지를
             <br />
-            업로드 하는 데에 있어 문제가 있었습니다만
+            업로드 하는 데에 있어 문제가 있었습니다만..........
           </p>
           <hr />
           <TextSmallBox>
@@ -95,6 +86,6 @@ export default function MyPortfolio() {
           </TextSmallBox>
         </TextBox>
       </MainBox>
-    </Container>
+    </ProjectLayout>
   );
 }

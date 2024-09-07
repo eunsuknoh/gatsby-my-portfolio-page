@@ -17,14 +17,37 @@ const Container = styled.div`
   color: white;
   position: relative;
   max-width: 100vw;
-  height: 100vh;
+  height: 100%;
   padding: 100px 250px;
+`;
+
+const Title = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 35px;
+`;
+
+const TitleName = styled.h5`
+  font-size: 25px;
 `;
 
 const Nav = styled.nav`
   position: absolute;
   top: 50px;
-  right: 200px;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span,
+  a {
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    color: white;
+  }
+  span {
+    font-size: 21px;
+  }
 
   ul {
     display: flex;
@@ -35,10 +58,6 @@ const Nav = styled.nav`
   li {
     list-style: none;
     a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 20px;
       transition: all 0.4s;
     }
     a:hover {
@@ -60,6 +79,7 @@ const Main = styled.main`
   border-radius: 20px;
   padding: 30px 70px;
   margin-top: 70px;
+  margin-bottom: 50px;
   box-shadow: white 0px 1px 4px;
   /* box-shadow: white 0px 1px 2px 0px, white 0px 2px 6px 2px; */
 `;
@@ -82,6 +102,9 @@ export default function Layout({ title, children }: ILayoutProps) {
       <GlobalStyle />
       <Container>
         <Nav>
+          <Title>
+            &lt; <TitleName>EunsukNoh /</TitleName> &gt;
+          </Title>
           <ul>
             <li>
               <Link to="/">About me</Link>

@@ -7,11 +7,10 @@ import { graphql, PageProps } from "gatsby";
 
 const Container = styled.div`
   font-size: 20px;
-`;
-
-const MainBox = styled.div`
   margin-top: 40px;
 `;
+
+const MainBox = styled.div``;
 
 const Section1 = styled.div`
   display: flex;
@@ -28,21 +27,24 @@ const Section1 = styled.div`
       font-weight: 600;
       line-height: 1.5cm;
     }
-    span:last-child {
-      font-size: 21px;
-      font-weight: 600;
-      color: lightblue;
-    }
   }
+`;
+
+const FE = styled.span`
+  font-size: 21px;
+  font-weight: 600;
+  color: lightblue;
 `;
 
 const Section2 = styled.div`
   margin: 0px 50px;
   margin-top: 70px;
+  text-align: center;
 `;
 
 const Icons = styled.div`
   display: flex;
+  justify-content: center;
   gap: 20px;
   margin-left: 50px;
   img {
@@ -64,20 +66,24 @@ export default function IndexPage({ data }: PageProps<Queries.ImageDataQuery>) {
               <br />
               사용자에게 아름다움을 선사하고
               <br />
-              편리함을 제공하고 싶은 <span>프론트엔드 개발자</span> 입니다
+              편리함을 제공하고 싶은 <FE>프론트엔드 개발자</FE> 입니다
+              <p>
+                React와 TS를 주언어로 사용하고 있으며
+                <br />
+              </p>
             </p>
           </Section1>
           <Section2>
             <h2>Skills</h2>
             <Icons>
-              <StaticImage src="../images/html.png" alt="html" />
-              <StaticImage src="../images/css.png" alt="css" />
-              <StaticImage src="../images/js.png" alt="js" />
-              <StaticImage src="../images/ts.png" alt="ts" />
-              <StaticImage src="../images/react.png" alt="react" />
-              <StaticImage src="../images/github-icon.png" alt="github-icon" />
-              <StaticImage src="../images/slack.png" alt="slack" />
-              <StaticImage src="../images/gatsby.png" alt="gatsby" />
+              <StaticImage src="../images/html.png" alt="HTML" />
+              <StaticImage src="../images/css.png" alt="CSS" />
+              <StaticImage src="../images/js.png" alt="JavaScript" />
+              <StaticImage src="../images/ts.png" alt="TypeScript" />
+              <StaticImage src="../images/react.png" alt="React" />
+              <StaticImage src="../images/github-icon.png" alt="Github" />
+              <StaticImage src="../images/slack.png" alt="Slack" />
+              <StaticImage src="../images/gatsby.png" alt="Gatsby" />
             </Icons>
           </Section2>
         </MainBox>
