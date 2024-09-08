@@ -44,12 +44,38 @@ const Section2 = styled.div`
 
 const Icons = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 20px;
-  margin-left: 50px;
+  align-items: center;
+  gap: 35px;
+  margin-top: 50px;
   img {
     width: 50px;
   }
+`;
+
+const IconBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 90px;
+  &::after {
+    content: attr(data-alt);
+  }
+`;
+
+const Icons1 = styled.div`
+  display: flex;
+  gap: 20px;
+`;
+const Icons2 = styled(Icons1)``;
+
+const Line = styled.div`
+  width: 2px;
+  height: 100px;
+  background-color: white;
+  margin: 40px auto;
 `;
 
 export default function IndexPage({ data }: PageProps<Queries.ImageDataQuery>) {
@@ -73,19 +99,41 @@ export default function IndexPage({ data }: PageProps<Queries.ImageDataQuery>) {
               </p>
             </p>
           </Section1>
+          <Line />
           <Section2>
             <h2>Skills</h2>
             <Icons>
-              <StaticImage src="../images/html.png" alt="HTML" />
-              <StaticImage src="../images/css.png" alt="CSS" />
-              <StaticImage src="../images/js.png" alt="JavaScript" />
-              <StaticImage src="../images/ts.png" alt="TypeScript" />
-              <StaticImage src="../images/react.png" alt="React" />
-              <StaticImage src="../images/github-icon.png" alt="Github" />
-              <StaticImage src="../images/slack.png" alt="Slack" />
-              <StaticImage src="../images/gatsby.png" alt="Gatsby" />
+              <Icons1>
+                <IconBox data-alt="HTML">
+                  <StaticImage src="../images/html.png" alt="HTML" />
+                </IconBox>
+                <IconBox data-alt="CSS">
+                  <StaticImage src="../images/css.png" alt="CSS" />
+                </IconBox>
+                <IconBox data-alt="Javascript">
+                  <StaticImage src="../images/js.png" alt="Javascript" />
+                </IconBox>
+                <IconBox data-alt="Typescript">
+                  <StaticImage src="../images/ts.png" alt="Typescript" />
+                </IconBox>
+                <IconBox data-alt="React">
+                  <StaticImage src="../images/react.png" alt="React" />
+                </IconBox>
+              </Icons1>
+              <Icons2>
+                <IconBox data-alt="Gatsby">
+                  <StaticImage src="../images/gatsby.png" alt="Gatsby" />
+                </IconBox>
+                <IconBox data-alt="Github">
+                  <StaticImage src="../images/github-icon.png" alt="Github" />
+                </IconBox>
+                <IconBox data-alt="Slack">
+                  <StaticImage src="../images/slack.png" alt="Slack" />
+                </IconBox>
+              </Icons2>
             </Icons>
           </Section2>
+          <Line />
         </MainBox>
       </Container>
     </Layout>
