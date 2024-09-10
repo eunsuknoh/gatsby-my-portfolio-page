@@ -23,7 +23,7 @@ const Section1 = styled.div`
   p {
     line-height: 1.5em;
     span:first-child {
-      font-size: 25px;
+      font-size: 30px;
       font-weight: 600;
       line-height: 1.5cm;
     }
@@ -37,8 +37,7 @@ const FE = styled.span`
 `;
 
 const Section2 = styled.div`
-  margin: 0px 50px;
-  margin-top: 70px;
+  margin: 100px 50px;
   text-align: center;
 `;
 
@@ -78,6 +77,10 @@ const Line = styled.div`
   margin: 40px auto;
 `;
 
+const Section3 = styled.div`
+  text-align: center;
+`;
+
 export default function IndexPage({ data }: PageProps<Queries.ImageDataQuery>) {
   const img = getImage(data.file?.childImageSharp?.gatsbyImageData!);
 
@@ -88,18 +91,19 @@ export default function IndexPage({ data }: PageProps<Queries.ImageDataQuery>) {
           <Section1>
             <GatsbyImage image={img as any} alt="avatar" />
             <p>
-              <span>안녕하세요 🐋 노은숙입니다</span>
+              <span>안녕하세요 🐋</span>
               <br />
-              사용자에게 아름다움을 선사하고
-              <br />
-              편리함을 제공하고 싶은 <FE>프론트엔드 개발자</FE> 입니다
+              <FE>아름다움을 선사하고 싶은 프론트엔드 개발자 </FE> 노은숙입니다
               <p>
-                React와 TS를 주언어로 사용하고 있으며
+                사용자에게 기능적인 아름다움을 갖춘 UX와
                 <br />
+                미적인 아름다움이 담긴 UI를 제공하고,
+                <br />
+                아름다운 코드를 작성하는 개발자로 성장해나가고 싶습니다
               </p>
             </p>
           </Section1>
-          <Line />
+          {/* <Line /> */}
           <Section2>
             <h2>Skills</h2>
             <Icons>
@@ -133,7 +137,10 @@ export default function IndexPage({ data }: PageProps<Queries.ImageDataQuery>) {
               </Icons2>
             </Icons>
           </Section2>
-          <Line />
+          {/* <Line /> */}
+          <Section3>
+            <h2>Projects</h2>
+          </Section3>
         </MainBox>
       </Container>
     </Layout>
