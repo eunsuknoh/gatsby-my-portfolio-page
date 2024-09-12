@@ -63,10 +63,6 @@ export default function MyPortfolio() {
             지금 보고 계신 사이트로,
             <br />
             정적페이지 생성의 유용한 Gatsby 프레임워크를 사용하여 제작하였습니다
-            <br />
-            메인 화면의 아바타나 아이콘 이미지를
-            <br />
-            업로드 하는 데에 있어 문제가 있었습니다만..........
           </p>
           <hr />
           <TextSmallBox>

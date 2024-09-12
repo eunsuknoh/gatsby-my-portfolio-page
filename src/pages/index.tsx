@@ -8,6 +8,9 @@ import { graphql, PageProps } from "gatsby";
 const Container = styled.div`
   font-size: 20px;
   margin-top: 40px;
+  h2 {
+    color: lightblue;
+  }
 `;
 
 const MainBox = styled.div``;
@@ -15,13 +18,14 @@ const MainBox = styled.div``;
 const Section1 = styled.div`
   display: flex;
   justify-content: space-around;
+  margin-top: 70px;
   img {
     object-fit: contain;
     width: fit-content;
     height: 250px;
   }
   p {
-    line-height: 1.5em;
+    line-height: 1.6em;
     span:first-child {
       font-size: 30px;
       font-weight: 600;
@@ -34,6 +38,9 @@ const FE = styled.span`
   font-size: 21px;
   font-weight: 600;
   color: lightblue;
+  border-bottom: 2px solid lightblue;
+  padding-bottom: 5px;
+  /* box-shadow: 0 4px 6px -6px white; */
 `;
 
 const Section2 = styled.div`
@@ -73,7 +80,7 @@ const Icons2 = styled(Icons1)``;
 const Line = styled.div`
   width: 2px;
   height: 100px;
-  background-color: white;
+  background-color: lightblue;
   margin: 40px auto;
 `;
 
@@ -85,15 +92,15 @@ export default function IndexPage({ data }: PageProps<Queries.ImageDataQuery>) {
   const img = getImage(data.file?.childImageSharp?.gatsbyImageData!);
 
   return (
-    <Layout title="Portfolio">
+    <Layout title="">
       <Container>
         <MainBox>
           <Section1>
             <GatsbyImage image={img as any} alt="avatar" />
             <p>
-              <span>안녕하세요 🐋</span>
+              <span>안녕하세요</span>
               <br />
-              <FE>아름다움을 선사하고 싶은 프론트엔드 개발자 </FE> 노은숙입니다
+              <FE>아름다움을 선사하고 싶은 프론트엔드 개발자</FE> 노은숙입니다
               <p>
                 사용자에게 기능적인 아름다움을 갖춘 UX와
                 <br />

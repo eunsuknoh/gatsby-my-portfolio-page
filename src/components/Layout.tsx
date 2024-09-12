@@ -102,9 +102,11 @@ export default function Layout({ title, children }: ILayoutProps) {
       <GlobalStyle />
       <Container>
         <Nav>
-          <Title>
-            &lt; <TitleName>EunsukNoh /</TitleName> &gt;
-          </Title>
+          <Link to="/">
+            <Title>
+              &lt; <TitleName>EunsukNoh /</TitleName> &gt;
+            </Title>
+          </Link>
           <ul>
             <li>
               <Link to="/">About me</Link>
