@@ -117,7 +117,7 @@ export default function Layout({ title, children }: ILayoutProps) {
             <li>
               <a href="https://github.com/eunsuknoh" target="_blank">
                 <StaticImage
-                  src="../images/github-icon.png"
+                  src="../images/icons/github.png"
                   alt="github-icon"
                 />
               </a>

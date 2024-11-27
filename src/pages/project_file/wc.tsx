@@ -53,31 +53,30 @@ const TextSmallBox = styled.div`
   }
 `;
 
-export default function FLiFLIX() {
+export default function WC() {
   return (
-    <ProjectLayout title="FliFLIX">
+    <ProjectLayout title="Weather Claus">
       <MainBox>
-        <StaticImage src="../../images/fliflix.png" alt="fliflix1" />
+        <StaticImage src="../../images/wc.png" alt="wc" />
         <TextBox>
           <p>
-            This is sample explanation.
+            날씨 웹사이트 팀 프로젝트입니다.
             <br />
-            I'm so excited to make my own project web page.
+            검색 혹은 위치 동의를 통해 날씨와 옷차림 정보를 확인할 수 있으며
+            <br />
+            회원가입 유저 한정으로 추가 기능을 제공합니다
           </p>
           <hr />
           <TextSmallBox>
             <div>
               <span>기술스택</span>
               <span>React</span>
-              <span>TypeScript</span>
-              <span>Framer Motion</span>
+              <span>React Query</span>
+              <span>Recoil</span>
             </div>
             <div>
               <span>URL</span>
-              <a
-                href="https://github.com/eunsuknoh/react-fliflix"
-                target="_blank"
-              />
+              <a href="https://weather-claus.netlify.app/" target="_blank" />
             </div>
           </TextSmallBox>
         </TextBox>

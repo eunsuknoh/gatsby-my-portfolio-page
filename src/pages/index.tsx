@@ -1,15 +1,16 @@
 import * as React from "react";
 import Layout from "../components/Layout";
 import styled from "styled-components";
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import Seo from "./Seo";
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import { graphql, PageProps } from "gatsby";
 
 const Container = styled.div`
   font-size: 20px;
   margin-top: 40px;
   h2 {
-    color: lightblue;
+    /* color: lightblue; */
+    color: #da7ba9;
   }
 `;
 
@@ -22,7 +23,7 @@ const Section1 = styled.div`
   img {
     object-fit: contain;
     width: fit-content;
-    height: 250px;
+    height: 260px;
   }
   p {
     line-height: 1.6em;
@@ -37,8 +38,10 @@ const Section1 = styled.div`
 const FE = styled.span`
   font-size: 21px;
   font-weight: 600;
-  color: lightblue;
-  border-bottom: 2px solid lightblue;
+  /* color: lightblue; */
+  color: #39a993;
+  /* border-bottom: 2px solid lightblue; */
+  border-bottom: 2px solid #39a993;
   padding-bottom: 5px;
   /* box-shadow: 0 4px 6px -6px white; */
 `;
@@ -88,6 +91,8 @@ const Section3 = styled.div`
   text-align: center;
 `;
 
+const Section4 = styled(Section3)``;
+
 export default function IndexPage({ data }: PageProps<Queries.ImageDataQuery>) {
   const img = getImage(data.file?.childImageSharp?.gatsbyImageData!);
 
@@ -106,7 +111,7 @@ export default function IndexPage({ data }: PageProps<Queries.ImageDataQuery>) {
                 <br />
                 미적인 아름다움이 담긴 UI를 제공하고,
                 <br />
-                아름다운 코드를 작성하는 개발자로 성장해나가고 싶습니다
+                아름다운 코드를 작성하는 개발자를 목표로 합니다
               </p>
             </p>
           </Section1>
@@ -116,30 +121,33 @@ export default function IndexPage({ data }: PageProps<Queries.ImageDataQuery>) {
             <Icons>
               <Icons1>
                 <IconBox data-alt="HTML">
-                  <StaticImage src="../images/html.png" alt="HTML" />
+                  <StaticImage src="../images/icons/html.png" alt="HTML" />
                 </IconBox>
                 <IconBox data-alt="CSS">
-                  <StaticImage src="../images/css.png" alt="CSS" />
+                  <StaticImage src="../images/icons/css.png" alt="CSS" />
                 </IconBox>
                 <IconBox data-alt="Javascript">
-                  <StaticImage src="../images/js.png" alt="Javascript" />
+                  <StaticImage src="../images/icons/js.png" alt="Javascript" />
                 </IconBox>
                 <IconBox data-alt="Typescript">
-                  <StaticImage src="../images/ts.png" alt="Typescript" />
+                  <StaticImage src="../images/icons/ts.png" alt="Typescript" />
                 </IconBox>
                 <IconBox data-alt="React">
-                  <StaticImage src="../images/react.png" alt="React" />
+                  <StaticImage src="../images/icons/react.png" alt="React" />
                 </IconBox>
               </Icons1>
               <Icons2>
                 <IconBox data-alt="Gatsby">
-                  <StaticImage src="../images/gatsby.png" alt="Gatsby" />
+                  <StaticImage src="../images/icons/gatsby.png" alt="Gatsby" />
                 </IconBox>
-                <IconBox data-alt="Github">
-                  <StaticImage src="../images/github-icon.png" alt="Github" />
+                <IconBox data-alt="GitHub">
+                  <StaticImage src="../images/icons/github.png" alt="GitHub" />
                 </IconBox>
                 <IconBox data-alt="Slack">
-                  <StaticImage src="../images/slack.png" alt="Slack" />
+                  <StaticImage src="../images/icons/slack.png" alt="Slack" />
+                </IconBox>
+                <IconBox data-alt="Notion">
+                  <StaticImage src="../images/icons/notion.png" alt="Notion" />
                 </IconBox>
               </Icons2>
             </Icons>
@@ -148,6 +156,9 @@ export default function IndexPage({ data }: PageProps<Queries.ImageDataQuery>) {
           <Section3>
             <h2>Projects</h2>
           </Section3>
+          <Section4>
+            <h2>Contacts</h2>
+          </Section4>
         </MainBox>
       </Container>
     </Layout>
@@ -156,7 +167,7 @@ export default function IndexPage({ data }: PageProps<Queries.ImageDataQuery>) {
 
 export const query = graphql`
   query ImageData {
-    file(relativePath: { eq: "avatar.png" }) {
+    file(relativePath: { eq: "profile.png" }) {
       childImageSharp {
         gatsbyImageData
       }
